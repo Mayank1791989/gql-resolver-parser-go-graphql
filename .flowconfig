@@ -1,0 +1,15 @@
+[ignore]
+
+[include]
+
+[libs]
+flow-libs
+
+[lints]
+
+[options]
+
+[strict]
+
+[version]
+0.104.0

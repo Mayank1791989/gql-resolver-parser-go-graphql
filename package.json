@@ -1,0 +1,36 @@
+{
+  "name": "@playlyfe/gql-resolver-parser-go-graphql",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "author": "Mayank Agarwal <mayank1791989@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel ./src --out-dir ./lib --verbose --delete-dir-on-start --ignore '**/__tests__/**,**/node_modules/**'",
+    "test": "yarn lint && yarn flow check && yarn testonly",
+    "lint": "eslint src",
+    "testonly": "jest --no-cache"
+  },
+  "dependencies": {
+    "tree-sitter": "0.15.8",
+    "tree-sitter-go": "0.15.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "babel-jest": "24.8.0",
+    "babel-preset-playlyfe": "4.0.1",
+    "dentist": "1.0.3",
+    "eslint": "5.16.0",
+    "eslint-plugin-playlyfe": "6.5.2",
+    "flow-bin": "0.104.0",
+    "jest": "24.8.0",
+    "prettier": "1.18.2"
+  },
+  "jest": {
+    "testRegex": "__tests__/.*.test.js$",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src/"
+    ]
+  }
+}
