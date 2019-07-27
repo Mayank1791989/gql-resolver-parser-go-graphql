@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+- '10'
+
+jobs:
+  include:
+  - stage: test
+    script: yarn test
+  - stage: npm publish
+    node_js: '10'
+    script: yarn build
+    deploy:
+      provider: npm
+      email: mayank1791989@gmail.com
+      api_key:
+        secure: lHogNAlrwzvn1+ob1YLRHW1gyBvhpVo01Htq7Lni8Xa3RGY5aZUdjHUY7iU46YWSF1uaGnpNUzWTSCVktRW5zNuxB0o1IOKTT//et3fOYP/fXchiyrtprMxi/k4eNui+tKA76xgnNX07sR0xe8sbbICkCpAdHTrv7iRyRGn0Pq7+ywJTJA6eeJ2nOMGwGPh8ajuaSK5Mt4mVEugEwTd2P2vDnpnhlEUNd49J7urrnJN2MkHdbZCO67kcJSu5N4vfFKPanZ/5IV1t6T2OvbsWhpFAB/IshDUF9MaGpiH0Un1D6gfc52ZOrHQPNozBSjG6lzGNIa7+iW9+xuGeVD0xbjrm8pnXZ2aMJaPnLZk81VEuuSw7YnBxdVlPdisVeoXq4UbQV3vWOLJDKjTbshfHSRRouafv82MI/GvxMOIxDswvf4NCcRqSkNFNZt56gWS/qYryw80GBr9tVGHE+FUOJ3BgCyYL7gwMkU3lP2h9QGBcleVWYaqyXc3yXuNHjH2mHJsh6RU5EnDPXmHiCgpTesg0v2P3OgcTQIoNNC77o7KD8hqYClvd/ePNXzK8liEp9P5u8z7YvsZv5P1dYxK8XohGbjyhHySSKB+aP/dyy4pyWGoI/ZtMrR/TqjEWhz42/JsDZSrkQYecQDqZvoXFOhwDiyRr55/YUnWcMJfKbTg=
+      skip_cleanup: true
+      on:
+        tags: true
+        repo: Mayank1791989/gql-resolver-parser-go-graphql

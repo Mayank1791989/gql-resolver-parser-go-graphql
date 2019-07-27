@@ -3,12 +3,24 @@
   "version": "0.0.0",
   "main": "lib/index.js",
   "author": "Mayank Agarwal <mayank1791989@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mayank1791989/gql-resolver-parser-go-graphql.git"
+  },
   "license": "MIT",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "babel ./src --out-dir ./lib --verbose --delete-dir-on-start --ignore '**/__tests__/**,**/node_modules/**'",
     "test": "yarn lint && yarn flow check && yarn testonly",
     "lint": "eslint src",
-    "testonly": "jest --no-cache"
+    "testonly": "jest --no-cache",
+    "release": "standard-version"
   },
   "dependencies": {
     "tree-sitter": "0.15.8",
@@ -24,7 +36,8 @@
     "eslint-plugin-playlyfe": "6.5.2",
     "flow-bin": "0.104.0",
     "jest": "24.8.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "standard-version": "6.0.1"
   },
   "jest": {
     "testRegex": "__tests__/.*.test.js$",
